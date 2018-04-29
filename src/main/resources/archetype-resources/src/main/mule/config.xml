@@ -1,3 +1,4 @@
+#set( $D = '$' )
 <?xml version="1.0" encoding="UTF-8"?>
 <mule xmlns="http://www.mulesoft.org/schema/mule/core"
       xmlns:apikit="http://www.mulesoft.org/schema/mule/mule-apikit"
@@ -11,8 +12,11 @@
     <configuration-properties doc:name="Shared config file" file="${config.dir}/config-shared.yaml" />
 #if( ${domain} == "default" )
     <http:listener-config name="api-httpListenerConfig">
-        <http:listener-connection host="0.0.0.0" port="8081" />
+        <http:listener-connection host="${D}{http.host}" port="${D}{http.port}" />
     </http:listener-config>
 #end
     <apikit:config name="api-config" raml="api.raml" outboundHeadersMapName="outboundHeaders" httpStatusVarName="httpStatus" />
+#if( ${anypointApiId} != "unset" )
+    <api-gateway:autodiscovery apiId="${D}{anypoint.apiId}" doc:name="API Autodiscovery" flowRef="api-main" />
+#end
 </mule>

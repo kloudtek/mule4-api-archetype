@@ -38,12 +38,16 @@ under the License.
     <requiredProperty key="version">
       <defaultValue>1.0.0-SNAPSHOT</defaultValue>
     </requiredProperty>
+    <requiredProperty key="anypointApiId">
+      <defaultValue>unset</defaultValue>
+    </requiredProperty>
   </requiredProperties>
   <fileSets>
     <fileSet filtered="true">
       <directory/>
       <includes>
         <include>mule-artifact.json</include>
+        <include>README.md</include>
       </includes>
     </fileSet>
     <fileSet filtered="true">

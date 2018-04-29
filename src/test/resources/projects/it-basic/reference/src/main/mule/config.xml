@@ -10,7 +10,7 @@
     <configuration-properties doc:name="Application config file" file="${config.dir}/config-basic-project.yaml" />
     <configuration-properties doc:name="Shared config file" file="${config.dir}/config-shared.yaml" />
     <http:listener-config name="api-httpListenerConfig">
-        <http:listener-connection host="0.0.0.0" port="8081" />
+        <http:listener-connection host="${http.host}" port="${http.port}" />
     </http:listener-config>
     <apikit:config name="api-config" raml="api.raml" outboundHeadersMapName="outboundHeaders" httpStatusVarName="httpStatus" />
 </mule>

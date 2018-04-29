@@ -3,3 +3,7 @@ http:
   host: "0.0.0.0"
   port: "8082"
 #end
+#if( ${anypointApiId} != "unset" )
+anypoint:
+  apiId: "${anypointApiId}"
+#end
