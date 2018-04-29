@@ -1,0 +1,21 @@
+{
+  "configs": [
+    "router.xml",
+    "config.xml",
+    "logic.xml"
+  ],
+  "secureProperties": [],
+  "redeploymentEnabled": true,
+  "name": "${artifactId}",
+  "minMuleVersion": "${runtimeVersion}",
+  "requiredProduct": "MULE_EE",
+  "classLoaderModelLoaderDescriptor": {
+    "id": "mule",
+    "attributes": {
+    }
+  },
+  "bundleDescriptorLoader": {
+    "id": "mule",
+    "attributes": {}
+  }
+}
