@@ -16,6 +16,14 @@
 
         <app.runtime>${runtimeVersion}</app.runtime>
         <mule.maven.plugin.version>3.1.1</mule.maven.plugin.version>
+#if( ${mavenSkipDeploy} == "true" )
+        <maven.deploy.skip>true</maven.deploy.skip>
+#end
+#if( ${useAnypointTools} == "true" )
+        <anypoint.org>${anypointOrg}</anypoint.org>
+        <anypoint.env>${anypointEnv}</anypoint.env>
+        <anypoint.target>${anypointTarget}</anypoint.target>
+#end
     </properties>
 
     <build>
@@ -28,6 +36,22 @@
                 <configuration>
                 </configuration>
             </plugin>
+#if( ${useAnypointTools} == "true" )
+            <plugin>
+                <groupId>com.kloudtek.anypoint-tools</groupId>
+                <artifactId>anypoint-maven-plugin</artifactId>
+                <version>${anypointToolsVersion}</version>
+                <executions>
+                    <execution>
+                        <id>deploy-arm</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+#end
         </plugins>
         <pluginManagement>
             <!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->

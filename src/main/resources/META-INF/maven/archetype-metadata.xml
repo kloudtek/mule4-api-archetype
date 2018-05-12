@@ -41,6 +41,24 @@ under the License.
     <requiredProperty key="anypointApiId">
       <defaultValue>unset</defaultValue>
     </requiredProperty>
+    <requiredProperty key="mavenSkipDeploy">
+      <defaultValue>false</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="useAnypointTools">
+      <defaultValue>true</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="anypointToolsVersion">
+      <defaultValue>0.9.25</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="anypointOrg">
+      <defaultValue>myorg</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="anypointEnv">
+      <defaultValue>myenv</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="anypointTarget">
+      <defaultValue>myDeployTarget</defaultValue>
+    </requiredProperty>
   </requiredProperties>
   <fileSets>
     <fileSet filtered="true">

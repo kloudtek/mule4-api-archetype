@@ -16,6 +16,10 @@
 
         <app.runtime>4.1.1</app.runtime>
         <mule.maven.plugin.version>3.1.1</mule.maven.plugin.version>
+        <maven.deploy.skip>true</maven.deploy.skip>
+        <anypoint.org>myorg</anypoint.org>
+        <anypoint.env>myenv</anypoint.env>
+        <anypoint.target>myDeployTarget</anypoint.target>
     </properties>
 
     <build>
@@ -27,6 +31,20 @@
                 <extensions>true</extensions>
                 <configuration>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.kloudtek.anypoint-tools</groupId>
+                <artifactId>anypoint-maven-plugin</artifactId>
+                <version>10.0.3</version>
+                <executions>
+                    <execution>
+                        <id>deploy-arm</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
         <pluginManagement>
