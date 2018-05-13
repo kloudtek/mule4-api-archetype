@@ -16,6 +16,7 @@
 
         <app.runtime>${runtimeVersion}</app.runtime>
         <mule.maven.plugin.version>3.1.1</mule.maven.plugin.version>
+        <munit.version>${munitVersion}</munit.version>
 #if( ${mavenSkipDeploy} == "true" )
         <maven.deploy.skip>true</maven.deploy.skip>
 #end
@@ -34,6 +35,29 @@
                 <version>${mule.maven.plugin.version}</version>
                 <extensions>true</extensions>
                 <configuration>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.mulesoft.munit.tools</groupId>
+                <artifactId>munit-maven-plugin</artifactId>
+                <version>${munit.version}</version>
+                <executions>
+                    <execution>
+                        <id>test</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>test</goal>
+                            <goal>coverage-report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <coverage>
+                        <runCoverage>true</runCoverage>
+                        <formats>
+                            <format>html</format>
+                        </formats>
+                    </coverage>
                 </configuration>
             </plugin>
 #if( ${useAnypointTools} == "true" )
@@ -90,11 +114,13 @@
     </build>
 
     <dependencies>
+#if( ${jsonLogging} == "true" )
         <dependency>
             <groupId>com.kloudtek.mule.elogging</groupId>
             <artifactId>mule-elogging-log4j2</artifactId>
-            <version>0.9.17</version>
+            <version>${eloggingVersion}</version>
         </dependency>
+#end
 #if( ${domain} == "default" )
         <dependency>
             <groupId>org.mule.connectors</groupId>
@@ -122,6 +148,20 @@
             <artifactId>mule-apikit-module</artifactId>
             <version>1.1.1</version>
             <classifier>mule-plugin</classifier>
+        </dependency>
+        <dependency>
+            <groupId>com.mulesoft.munit</groupId>
+            <artifactId>munit-runner</artifactId>
+            <version>${munit.version}</version>
+            <classifier>mule-plugin</classifier>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.mulesoft.munit</groupId>
+            <artifactId>munit-tools</artifactId>
+            <version>${munit.version}</version>
+            <classifier>mule-plugin</classifier>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

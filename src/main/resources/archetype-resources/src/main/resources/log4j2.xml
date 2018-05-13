@@ -9,12 +9,14 @@
         see them in the mule_ee.log file. -->
 
     <Appenders>
+#if( ${jsonLogging} == "true" )
         <RollingFile name="jsonFile" fileName="${D}{sys:mule.home}${D}{sys:file.separator}logs${D}{sys:file.separator}${artifactId}.log.json"
                      filePattern="${D}{sys:mule.home}${D}{sys:file.separator}logs${D}{sys:file.separator}${artifactId}-%i.log.json">
             <ELJsonLayout/>
             <SizeBasedTriggeringPolicy size="10 MB"/>
             <DefaultRolloverStrategy max="10"/>
         </RollingFile>
+#end
         <RollingFile name="file" fileName="${D}{sys:mule.home}${D}{sys:file.separator}logs${D}{sys:file.separator}${artifactId}.log"
                  filePattern="${D}{sys:mule.home}${D}{sys:file.separator}logs${D}{sys:file.separator}${artifactId}-%i.log">
             <PatternLayout pattern="%-5p %d [%t] %X{correlationId}%c: %m%n" />
@@ -35,7 +37,9 @@
  
         <AsyncRoot level="INFO">
             <AppenderRef ref="file" />
+#if( ${jsonLogging} == "true" )
             <AppenderRef ref="jsonFile" />
+#end
         </AsyncRoot>
     </Loggers>
 </Configuration>

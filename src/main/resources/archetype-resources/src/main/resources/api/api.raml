@@ -3,8 +3,14 @@ title: ${artifactId}
 
 /healthcheck:
   get:
+    description: Checks the health of this API
     responses:
       200:
         body:
           application/json:
-            type: string
+            type: object
+            example: { "status": "ok" }
+            properties:
+              status:
+                type: string
+                enum: [ ok, degraded, dead, maintenance ]

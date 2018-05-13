@@ -9,9 +9,9 @@
       http://www.mulesoft.org/schema/mule/mule-apikit http://www.mulesoft.org/schema/mule/mule-apikit/current/mule-apikit.xsd">
     <flow name="api-main">
 #if( ${domain} == "default" )
-        <http:listener config-ref="api-httpListenerConfig" path="/*">
+        <http:listener config-ref="api-httpListenerConfig" path="/${apiBasePath}*">
 #else
-        <http:listener config-ref="http-shared" path="/${artifactId}/*">
+        <http:listener config-ref="http-shared" path="/${artifactId}/${apiBasePath}*">
 #end
             <http:response statusCode="#[vars.httpStatus default 200]">
                 <http:headers>#[vars.outboundHeaders default {}]</http:headers>

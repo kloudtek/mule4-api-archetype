@@ -8,7 +8,7 @@
       http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
       http://www.mulesoft.org/schema/mule/mule-apikit http://www.mulesoft.org/schema/mule/mule-apikit/current/mule-apikit.xsd">
     <flow name="api-main">
-        <http:listener config-ref="api-httpListenerConfig" path="/*">
+        <http:listener config-ref="api-httpListenerConfig" path="/v1/*">
             <http:response statusCode="#[vars.httpStatus default 200]">
                 <http:headers>#[vars.outboundHeaders default {}]</http:headers>
             </http:response>
