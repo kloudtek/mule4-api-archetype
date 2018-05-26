@@ -52,6 +52,9 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <dynamicPorts>
+                        <dynamicPort>${munitDynamicPort}</dynamicPort>
+                    </dynamicPorts>
                     <coverage>
                         <runCoverage>true</runCoverage>
                         <formats>

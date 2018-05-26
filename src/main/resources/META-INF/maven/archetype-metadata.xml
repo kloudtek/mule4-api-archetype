@@ -21,10 +21,13 @@ under the License.
 
 <archetype-descriptor xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
-  name="${artifactId}" partial="true">
+  name="${artifactId}">
   <requiredProperties>
     <requiredProperty key="munitVersion">
       <defaultValue>2.1.1</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="munitDynamicPort">
+      <defaultValue>http.port</defaultValue>
     </requiredProperty>
     <requiredProperty key="apiBasePath">
       <defaultValue>v1/</defaultValue>
