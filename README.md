@@ -35,3 +35,5 @@ By default it will incorporate [mule-elogging](https://github.com/kloudtek/mule-
 If you want to use anypoint API Manager, you can set the property `anypointApiId` to the API ID, in which case it will add the API Discovery configuration to the project with the corresponding id
 
 By default it will also incorporate the [anypoint tools](https://github.com/kloudtek/anypoint-tools) maven tool which provide advanced deployment capabilities. You can override which org, env and target that will be used by default for deployment using `anypointOrg`, `anypointEnv`, `anypointTarget`. You can also override which version of anypoint tools will be used with the property `anypointToolsVersion`. If you don't want the anypoint tools maven task to be added to the pom, you can set the property `useAnypointTools` to false
+
+The project will automatically include the munit plugin and an example test. The version of the munit library can be overriden using `munitVersion`. Also by default it will set the dynamic port to be assigned to the variable `http.port`, which can be overriden using the `munitDynamicPort` property
