@@ -5,13 +5,13 @@ This is a maven archetype used to create mule 4 API projects (using APIKit)
 In order to use it to create a project, you can run the following command:
 
 ```
-mvn archetype:generate -DarchetypeGroupId=com.kloudtek.mule -DarchetypeArtifactId=mule4-api-archetype -DarchetypeVersion=0.9.4
+mvn archetype:generate -DarchetypeGroupId=com.kloudtek.mule -DarchetypeArtifactId=mule4-api-archetype -DarchetypeVersion=0.9.5
 ```
 
 Additionally you can specify all normal maven archetype properties like groupId and artifactId. For example to create a project with group id 'com.mycompany' and artifact id 'my-system-api', you run the following command ( the -B flag is to use non-interactive batch mode )
 
 ```
-mvn archetype:generate -DarchetypeGroupId=com.kloudtek.mule -DarchetypeArtifactId=mule4-api-archetype -DarchetypeVersion=0.9.4 -DgroupId=com.mycompany -DartifactId=my-system-api -B
+mvn archetype:generate -DarchetypeGroupId=com.kloudtek.mule -DarchetypeArtifactId=mule4-api-archetype -DarchetypeVersion=0.9.5 -DgroupId=com.mycompany -DartifactId=my-system-api -B
 ```
 
 Additionally, there are various optional parameters you can set.
@@ -27,7 +27,7 @@ Specifying the domain is done using multiple properties:
 So for example:
 
 ```
-mvn archetype:generate -DarchetypeGroupId=com.kloudtek.mule -DarchetypeArtifactId=mule4-api-archetype -DarchetypeVersion=0.9.4 -DgroupId=com.mycompany -DartifactId=my-system-api -Ddomain=my-shared-domain -DdomainGroupId=com.mycompany -DdomainVersion=1.0.0 -B
+mvn archetype:generate -DarchetypeGroupId=com.kloudtek.mule -DarchetypeArtifactId=mule4-api-archetype -DarchetypeVersion=0.9.5 -DgroupId=com.mycompany -DartifactId=my-system-api -Ddomain=my-shared-domain -DdomainGroupId=com.mycompany -DdomainVersion=1.0.0 -B
 ```
 
 By default it will incorporate [mule-elogging](https://github.com/kloudtek/mule-elogging) to generate structured json logs as well as plain text logs. You can override which version of mule-elogging through the `eloggingVersion` property. Or if you prefer not to use elogging then set the property `jsonLogging` to false
