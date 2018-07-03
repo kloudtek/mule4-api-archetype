@@ -36,10 +36,10 @@ under the License.
       <defaultValue>default</defaultValue>
     </requiredProperty>
     <requiredProperty key="domainGroupId">
-      <defaultValue></defaultValue>
+      <defaultValue>changeme</defaultValue>
     </requiredProperty>
     <requiredProperty key="domainVersion">
-      <defaultValue></defaultValue>
+      <defaultValue>changeme</defaultValue>
     </requiredProperty>
     <requiredProperty key="runtimeVersion">
       <defaultValue>4.1.1</defaultValue>
