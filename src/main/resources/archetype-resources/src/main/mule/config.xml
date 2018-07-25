@@ -13,6 +13,7 @@
     <global-property doc:name="Global Property" name="config.dir" value="." />
     <configuration-properties doc:name="Application config file" file="${config.dir}/config-${artifactId}.yaml" />
     <configuration-properties doc:name="Shared config file" file="${config.dir}/config-shared.yaml" />
+    <configuration-properties doc:name="API config file" file="apiconfig.properties" />
 #if( ${domain} == "default" )
     <http:listener-config name="api-httpListenerConfig">
         <http:listener-connection host="${D}{http.host}" port="${D}{http.port}" />
