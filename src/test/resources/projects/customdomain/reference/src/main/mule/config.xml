@@ -12,6 +12,7 @@
     <global-property doc:name="Global Property" name="config.dir" value="." />
     <configuration-properties doc:name="Application config file" file="${config.dir}/config-basic-project.yaml" />
     <configuration-properties doc:name="Shared config file" file="${config.dir}/config-shared.yaml" />
+    <configuration-properties doc:name="API config file" file="apiconfig.properties" />
     <apikit:config name="api-config" raml="api.raml" outboundHeadersMapName="outboundHeaders" httpStatusVarName="httpStatus" />
     <api-gateway:autodiscovery apiId="${anypoint.apiId}" doc:name="API Autodiscovery" flowRef="api-main" />
 </mule>
