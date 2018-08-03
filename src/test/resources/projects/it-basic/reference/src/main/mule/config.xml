@@ -12,6 +12,7 @@
     <global-property doc:name="Global Property" name="config.dir" value="." />
     <configuration-properties doc:name="Application config file" file="${config.dir}/config-basic-project.yaml" />
     <configuration-properties doc:name="Shared config file" file="${config.dir}/config-shared.yaml" />
+    <configuration-properties doc:name="API config file" file="apiconfig.properties" />
     <http:listener-config name="api-httpListenerConfig">
         <http:listener-connection host="${http.host}" port="${http.port}" />
     </http:listener-config>
