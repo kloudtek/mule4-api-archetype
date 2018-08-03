@@ -57,7 +57,7 @@ under the License.
       <defaultValue>true</defaultValue>
     </requiredProperty>
     <requiredProperty key="anypointToolsVersion">
-      <defaultValue>0.9.27</defaultValue>
+      <defaultValue>0.9.32</defaultValue>
     </requiredProperty>
     <requiredProperty key="anypointOrg">
       <defaultValue>myorg</defaultValue>
